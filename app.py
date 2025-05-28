@@ -18,14 +18,12 @@ def roads():
     query = "SELECT name, description FROM roads"
     if road:
         query += f" WHERE name = '{road}'"
-    print(f"Executing: {query}")  # Debug output
 
     conn = get_db_connection()
     sqli_attempt = False
     try:
         rows = conn.execute(query).fetchall()
         results = [row for row in rows if row['name'].startswith('DK')]
-        print(rows, results)
         if len(results) < len(rows):
             sqli_attempt = True
     except Exception as e:
@@ -55,7 +53,6 @@ def flags():
     query = "SELECT name, colors FROM flags"
     if name:
         query += f" WHERE UPPER(name) LIKE UPPER('%{name}%')"
-    print(f"Executing: {query}")  # Debug output
 
     conn = get_db_connection()
     try:
