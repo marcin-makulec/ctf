@@ -35,7 +35,7 @@ def roads():
     <h1>Database: SQLite, table: roads</h1>
     {'<h2>Warning: This endpoint sanitazes output data</h2>' if sqli_attempt else ''}
     <form method="get" action="/roads">
-        <input style="display:block;width:900px" type="text" name="road" placeholder="Search road...">
+        <input style="display:block;width:900px" type="text" name="road" placeholder="DK3">
         <input type="submit" value="Search">
     </form>
     <table border="1">
